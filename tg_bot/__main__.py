@@ -19,11 +19,11 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-Yo {}, I'm *{}*!
+Yoo, wassup {}, I'm *{}*!
 
 I'm a group manager bot  that can help you manage your groups with tons of extra features.
 
-Join our [News Channel](https://t.me/IzumiUchihaNews) ( @IzumiUchihaNews ) for announcements regarding bot updates, new features and possible bug fixes!
+Join our [News Channel](https://t.me/pawneeupdates) ( @pawneeupdates ) for announcements regarding bot updates, new features and possible bug fixes!
 
 Lastly, tap on the help button for any help/assistance with the bot!
 """
