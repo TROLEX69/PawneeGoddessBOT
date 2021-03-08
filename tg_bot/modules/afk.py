@@ -1,7 +1,6 @@
 import random
 
 from telegram import Bot, Update, MessageEntity
-from telegram.ext import Filters, run_async
 
 from tg_bot import dispatcher
 from tg_bot.modules.disable import DisableAbleCommandHandler, DisableAbleRegexHandler, DisableAbleMessageHandler
