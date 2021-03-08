@@ -49,7 +49,7 @@ def ban(update: Update, context: CallbackContext):
                 integerID = int(id)
                 member = chat.get_member(integerID)
                 if integerID == bot.id:
-                    message.reply_text("I wont ban myself... " +
+                    message.reply_text("No no I wont ban myself... " +
                                        str(integerID) + " is my ID.")
                     continue
                 if integerID == 777000 or integerID == 1087968824:
@@ -65,7 +65,7 @@ def ban(update: Update, context: CallbackContext):
                 try:
                     chat.kick_member(integerID)
                     # bot.send_sticker(update.effective_chat.id, BAN_STICKER)  # ban sticker
-                    reply = "{} has been banned!".format(
+                    reply = "{} has been banned! 😝".format(
                         mention_html(member.user.id, member.user.first_name))
                     message.reply_text(reply, parse_mode=ParseMode.HTML)
                     log += "ID: " + str(member.user.id) + "\n"
