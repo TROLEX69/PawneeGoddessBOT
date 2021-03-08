@@ -20,7 +20,7 @@ def afk(bot: Bot, update: Update):
     update.effective_message.reply_text("{} is away from keyboard !".format(update.effective_user.first_name))
 
 
-@run_async
+
 def no_longer_afk(bot: Bot, update: Update):
     user = update.effective_user
 
@@ -43,7 +43,6 @@ def no_longer_afk(bot: Bot, update: Update):
         update.effective_message.reply_text(chosen_option.format(update.effective_user.first_name))
 
 
-@run_async
 def reply_afk(bot: Bot, update: Update):
     message = update.effective_message
     entities = message.parse_entities([MessageEntity.TEXT_MENTION, MessageEntity.MENTION])
