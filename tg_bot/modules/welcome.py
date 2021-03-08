@@ -298,7 +298,7 @@ def left_member(update: Update, context: CallbackContext):
 
             # Give the owner a special goodbye
             if left_mem.id == OWNER_ID:
-                update.effective_message.reply_text("RIP Master")
+                update.effective_message.reply_text("RIP Master, You don't know the power of the dark side bitchs!")
                 return
 
             first_name = left_mem.first_name or "PersonWithNoName"  # edge case of empty name - occurs for some bugs.
@@ -703,7 +703,7 @@ def user_button(update: Update, context: CallbackContext):
             _user.status == 'creator') or _user.can_restrict_members or (int(
                 user.id) in SUDO_USERS):
         query.answer(
-            text="Yup, you're very human, you have now the right to speak!")
+            text="Yup, you're very human, you have now the right to speak! 👍")
         bot.restrict_chat_member(chat.id,
                                  join_user,
                                  permissions=ChatPermissions(
