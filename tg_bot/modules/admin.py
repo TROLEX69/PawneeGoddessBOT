@@ -37,14 +37,20 @@ def promote(update: Update, context: CallbackContext, check="restrict") -> str:
         return ""
 
     user_member = chat.get_member(user_id)
-    if user_member.status == 'administrator' or user_member.status == 'creator':
+    if user_member.status == 'administrator':
         message.reply_text(
-            "How am I meant to promote someone that's already an admin?")
+            "I guess I did my work before you asked 😅, This person is already an admin.")
         return ""
-
+    
+    user_member = chat.get_member(user_id)
+    if user_member.status == 'creator':
+        message.reply_text(
+            "Are you serious? This person created the chat, what are you doing??")
+        return ""
+    
     if user_id == bot.id:
         message.reply_text(
-            "I can't promote myself! Get an admin to do it for me.")
+            "I can't promote myself! 🤷‍♀️ Get an admin to do it for me please.")
         return ""
 
     # set same perms as bot - bot can't assign higher perms than itself!
@@ -68,7 +74,7 @@ def promote(update: Update, context: CallbackContext, check="restrict") -> str:
         bot.set_chat_administrator_custom_title(chat_id, user_id, title[:16])
         text = " with title <code>{}</code>".format(title[:16])
 
-    message.reply_text("Successfully promoted {}".format(
+    message.reply_text("Successfully promoted {} with immortal power.".format(
         mention_html(user_member.user.id, user_member.user.first_name)) +
                        text + "!",
                        parse_mode=ParseMode.HTML)
@@ -102,16 +108,16 @@ def demote(update: Update, context: CallbackContext) -> str:
     user_member = chat.get_member(user_id)
     if user_member.status == 'creator':
         message.reply_text(
-            "This person CREATED the chat, how would I demote them?")
+            "This person CREATED the chat. He's IMMORTAL, how would I demote them?🤦‍♀️")
         return ""
 
     if not user_member.status == 'administrator':
-        message.reply_text("Can't demote what wasn't promoted!")
+        message.reply_text("Can't demote what wasn't promoted! Tho we can kick them 😉")
         return ""
 
     if user_id == bot.id:
         message.reply_text(
-            "I can't demote myself! Get an admin to do it for me.")
+            "I can't demote myself! 🤷‍♀️ Get an admin to do it for me (please don't 😔).")
         return ""
 
     try:
@@ -134,7 +140,7 @@ def demote(update: Update, context: CallbackContext) -> str:
                               can_pin_messages=False,
                               can_promote_members=False)
 
-        message.reply_text("Successfully demoted {}!".format(
+        message.reply_text("Successfully demoted {}, He's now mortal lmao!".format(
             mention_html(user_member.user.id, user_member.user.first_name)),
                            parse_mode=ParseMode.HTML)
         return "<b>{}:</b>" \
