@@ -10,7 +10,6 @@ AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
 
 
-@run_async
 def afk(bot: Bot, update: Update):
     args = update.effective_message.text.split(None, 1)
     reason = ""
