@@ -165,7 +165,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "Master is in the houseeee, let's get this party started!")
+                    "Master is in the houseeee, you all must obey my master!")
                 continue
             # Give the sudos/support a special welcome too
             elif new_mem.id in SUDO_USERS or new_mem.id in SUPPORT_USERS:
@@ -244,10 +244,10 @@ def new_member(update: Update, context: CallbackContext):
                         text = " else you'll be kicked after {} seconds.".format(
                             str(time_value))
                     buttonMsg = msg.reply_text(
-                        "Click the button below to prove you're human" + text,
+                        "Click the button below to prove you're human 👀" + text,
                         reply_markup=InlineKeyboardMarkup([[
                             InlineKeyboardButton(
-                                text="I'm not a bot!",
+                                text="I'm not a bot! 🤖",
                                 callback_data="userverify_({})".format(
                                     new_mem.id))
                         ]]))
